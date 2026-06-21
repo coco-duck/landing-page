@@ -88,7 +88,7 @@
     h1 {
       margin-bottom: 45px;
       font-size: clamp(40px, 6.3vw, 74px);
-      line-height: 1.1;
+      line-height: 1.2;
       letter-spacing: -0.075em;
     }
 
@@ -235,6 +235,16 @@
     .hero-punch strong {
       color: var(--text);
       font-weight: 900;
+    }
+
+    .hero-highlight {
+      display: inline-block;
+      padding: 2px 8px 4px;
+      border-radius: 10px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
     }
 
     .cta-row {
@@ -994,7 +1004,7 @@
       }
       .hero-intro .intro-lead {
         margin-bottom: 14px;
-        font-size: 18px;
+        font-size: 22px;
       }
       .hero-intro .intro-body {
         font-size: 15px;
@@ -1004,7 +1014,7 @@
         gap: 20px;
         width: 100%;
         padding: 0 25px;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
       }
       .chat-bubble {
         width: 100%;
@@ -1018,7 +1028,7 @@
       }
       .chat-bubble p { font-size: 15px; }
       .hero-punch {
-        margin-bottom: 24px;
+        margin-bottom: 35px;
         font-size: 18px;
       }
       .cta-row .btn { width: 100%; }
@@ -1118,7 +1128,7 @@
             </div>
           </div>
           <p class="hero-punch">
-            <strong>하나라도 해당된다면<br>새로 가입하기 전에 현재 보험 상태부터<br>먼저 확인해보세요!</strong>
+            <strong>하나라도 해당된다면<br><span class="hero-highlight">현재 보험 상태</span>부터<br>먼저 확인해보세요!</strong>
           </p>
           <div class="cta-row" aria-label="상담 문의 버튼">
             <a class="btn btn-primary" href="https://pf.kakao.com/_YOUR_CHANNEL" target="_blank" rel="noopener">💬 카톡으로 내 보험 상태 확인하기</a>
