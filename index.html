@@ -392,26 +392,24 @@
     }
 
     .message-box {
-      margin-top: 28px;
-      padding: 26px;
-      border-radius: 28px;
-      background: #111827;
-      color: #fff;
+      max-width: 760px;
+      margin: 38px auto 0;
+      padding: 0;
+      color: var(--text);
       text-align: center;
-      box-shadow: 0 22px 55px rgba(17, 24, 39, 0.18);
     }
 
     .message-box p {
       margin: 0;
-      color: rgba(255,255,255,.82);
-      font-size: 20px;
-      line-height: 1.7;
+      color: #344054;
+      font-size: clamp(18px, 2.3vw, 24px);
+      line-height: 1.65;
       letter-spacing: -0.04em;
-      font-weight: 650;
+      font-weight: 700;
     }
 
     .message-box strong {
-      color: #fff;
+      color: var(--text);
       font-weight: 950;
     }
 
@@ -1073,7 +1071,6 @@
         font-size: 16px;
         line-height: 1.55;
       }
-      .message-box { text-align: left; }
       .message-box p { font-size: 18px; }
       .compare-card { padding: 22px; }
       .compare-table {
