@@ -66,19 +66,6 @@
       margin: 0 auto;
     }
 
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 12px;
-      z-index: 9999;
-      padding: 10px 14px;
-      border-radius: 12px;
-      background: var(--text);
-      color: #fff;
-    }
-
-    .skip-link:focus { left: 12px; }
-
     .hero {
       position: relative;
       padding: 86px 0 72px;
@@ -107,9 +94,24 @@
 
     .accent { color: var(--primary); }
 
+    .hero-intro {
+      max-width: 680px;
+      margin: 0 auto 32px;
+      color: #344054;
+      font-size: clamp(18px, 2.3vw, 24px);
+      line-height: 1.58;
+      letter-spacing: -0.04em;
+      font-weight: 650;
+    }
+
+    .hero-intro strong {
+      color: var(--text);
+      font-weight: 900;
+    }
+
     .hero-chat {
       display: grid;
-      gap: 12px;
+      gap: 25px;
       justify-items: start;
       width: min(100%, 680px);
       margin: 0 auto 28px;
@@ -121,7 +123,7 @@
       align-items: center;
       gap: 12px;
       max-width: min(100%, 520px);
-      padding: 14px 18px 14px 14px;
+      padding: 18px 20px;
       border: 1px solid #d8e2f1;
       border-radius: 20px;
       color: #1f2937;
@@ -130,47 +132,69 @@
       text-align: left;
     }
 
+    .chat-bubble::before,
     .chat-bubble::after {
       content: "";
       position: absolute;
-      left: 15px;
-      bottom: -7px;
-      width: 16px;
-      height: 16px;
-      border-left: 1px solid #d8e2f1;
-      border-bottom: 1px solid #d8e2f1;
-      border-bottom-left-radius: 5px;
-      background: inherit;
-      transform: rotate(24deg) skew(-16deg);
+      pointer-events: none;
+    }
+
+    .chat-bubble::before {
+      left: 26px;
+      bottom: -13px;
+      width: 20px;
+      height: 13px;
+      background: #d8e2f1;
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+
+    .chat-bubble::after {
+      left: 27px;
+      bottom: -11px;
+      width: 18px;
+      height: 11px;
+      background: #fff;
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
     }
 
     .chat-bubble.right {
       justify-self: end;
-      padding: 14px 14px 14px 18px;
+      padding: 18px 20px;
       border-color: #b9d7ff;
       background: #edf6ff;
       box-shadow: 0 14px 34px rgba(29, 100, 255, 0.15);
     }
 
     .chat-bubble.right::after {
-      right: 15px;
+      right: 27px;
       left: auto;
-      border-right: 1px solid #b9d7ff;
-      border-bottom: 1px solid #b9d7ff;
-      border-left: 0;
-      border-bottom-right-radius: 5px;
-      border-bottom-left-radius: 0;
-      transform: rotate(-24deg) skew(16deg);
+      bottom: -11px;
+      width: 18px;
+      height: 11px;
+      background: #edf6ff;
+      clip-path: polygon(0 0, 0 100%, 100% 0);
+    }
+
+    .chat-bubble.right::before {
+      right: 26px;
+      left: auto;
+      bottom: -13px;
+      width: 20px;
+      height: 13px;
+      background: #b9d7ff;
+      clip-path: polygon(0 0, 0 100%, 100% 0);
     }
 
     .chat-bubble p {
       position: relative;
       z-index: 1;
       margin: 0;
+      width: 100%;
       font-size: clamp(15px, 1.7vw, 17px);
       line-height: 1.5;
       letter-spacing: -0.035em;
       font-weight: 850;
+      text-align: center;
     }
 
     .hero-punch {
@@ -931,19 +955,27 @@
     }
 
     @media (max-width: 760px) {
-      .wrap { width: min(100% - 28px, var(--max)); }
+      .wrap { width: min(100% - 30px, var(--max)); }
       .hero { padding: 54px 0 42px; }
       h1 { margin-bottom: 18px; }
+      .hero-intro {
+        margin-bottom: 24px;
+        font-size: 18px;
+      }
       .hero-chat {
-        gap: 11px;
+        gap: 20px;
+        width: 100%;
+        padding: 0 25px;
         margin-bottom: 24px;
       }
       .chat-bubble {
-        max-width: 100%;
+        width: 100%;
+        max-width: none;
         padding: 12px 14px 12px 12px;
         border-radius: 18px;
       }
       .chat-bubble.right {
+        justify-self: stretch;
         padding: 12px 12px 12px 14px;
       }
       .chat-bubble p { font-size: 15px; }
@@ -1022,22 +1054,27 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-
   <main id="main">
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div class="reveal">
           <h1>보험료는 매달 나가는데,<br><span class="accent">내 보험은 괜찮은지</span><br>불안하시죠?</h1>
+          <p class="hero-intro">
+            그 불안은 당연합니다.<br><br>
+            보험은 가입할 때는 좋아 보이지만,<br>
+            시간이 지나면 내가 어떤 보장을 갖고 있는지,<br>
+            무엇이 중복이고 무엇이 부족한지<br>
+            <strong>혼자 판단하기 어려워지기 때문입니다.</strong>
+          </p>
           <div class="hero-chat" aria-label="고객 고민 예시">
             <div class="chat-bubble">
-              <p>“내가 어떤걸 보장받는지 정확히 알고 계신가요?”</p>
+              <p>“내가 어떤걸 보장받는지<br>정확히 알고 계신가요?”</p>
             </div>
             <div class="chat-bubble right">
-              <p>“완납까지 얼만큼의 보험료를 내야 하는지 알고 계신가요?”</p>
+              <p>“완납까지 얼만큼의 보험료를<br>내야 하는지 알고 계신가요?”</p>
             </div>
             <div class="chat-bubble">
-              <p>“어떤 상황에 얼마를 받을 수 있는지 알고 계신가요?”</p>
+              <p>“어떤 상황에 얼마를 받을 수 있는지<br>알고 계신가요?”</p>
             </div>
           </div>
           <p class="hero-punch">
