@@ -823,6 +823,15 @@
       margin-top: 30px;
     }
 
+    .support-intro strong {
+      color: var(--text);
+      font-weight: 900;
+    }
+
+    .support-label {
+      margin-bottom: 0;
+    }
+
     .support-card {
       padding: 24px;
       border-radius: 26px;
@@ -852,17 +861,17 @@
     }
 
     .faq-list {
-      max-width: 860px;
+      max-width: 920px;
       margin: 0 auto;
       display: grid;
-      gap: 12px;
+      gap: 14px;
     }
 
     details {
       border: 1px solid var(--line);
-      border-radius: 22px;
+      border-radius: 24px;
       background: #fff;
-      box-shadow: 0 8px 24px rgba(20, 38, 75, 0.05);
+      box-shadow: var(--shadow-soft);
       overflow: hidden;
     }
 
@@ -871,10 +880,11 @@
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      padding: 22px 24px;
+      padding: 24px 26px;
       cursor: pointer;
-      font-size: 18px;
-      font-weight: 850;
+      font-size: 19px;
+      line-height: 1.45;
+      font-weight: 900;
       letter-spacing: -0.04em;
       list-style: none;
     }
@@ -901,28 +911,27 @@
     }
 
     .answer {
-      padding: 0 24px 22px;
+      padding: 0 26px 24px;
       color: #5b6677;
-      font-size: 16px;
-      line-height: 1.72;
+      font-size: 17px;
+      line-height: 1.78;
       letter-spacing: -0.035em;
-      font-weight: 620;
+      font-weight: 650;
     }
 
     .final {
-      padding: 90px 0 110px;
+      padding: 96px 24px 110px;
       background:
         radial-gradient(circle at 20% 10%, rgba(29, 100, 255, 0.18), transparent 26rem),
-        #f6f8fb;
+        #111827;
+      color: #fff;
     }
 
     .final-card {
-      padding: clamp(34px, 6vw, 64px);
-      border-radius: 40px;
-      background: #111827;
-      color: #fff;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0;
       text-align: center;
-      box-shadow: 0 28px 80px rgba(17, 24, 39, 0.22);
     }
 
     .final-card h2 {
@@ -1133,8 +1142,8 @@
       .inside-box { padding: 16px; }
       .sticky-note { position: static; }
       .footer-grid { grid-template-columns: 1fr; }
-      .final { padding-bottom: 30px; }
-      .final-card { border-radius: 32px; text-align: left; }
+      .final { padding: 72px 28px 82px; }
+      .final-card { text-align: left; }
       .final-card p { margin-left: 0; }
     }
   </style>
@@ -1476,33 +1485,43 @@
     <section aria-labelledby="support-title">
       <div class="wrap">
         <div class="section-head reveal">
-          <span class="kicker">가입하고 끝이 아닙니다</span>
-          <h2 id="support-title">보험은 가입할 때보다<br>청구할 때 더 중요해집니다</h2>
-          <p class="lead">사고나 질병이 발생하면 어떤 보장을 청구할 수 있는지, 어떤 서류가 필요한지 혼자 판단하기 어려울 수 있습니다.</p>
+          <h2 class="section-title" id="support-title">가입하고 끝이<br>아닙니다</h2>
+          <p class="lead support-intro">
+            보험은 가입할 때보다 <strong>보험금을 ‘청구’할 때 더 중요해집니다.</strong><br><br>
+            막상 사고나 질병이 발생하면 무엇을 어떻게 청구해야 하는지,
+            어떤 서류가 필요한지, 보험사에서 왜 추가 확인을 요청하는지
+            혼자 판단하기 어려울 수 있습니다.<br><br>
+            보결남은 가입 이후에도 <strong>보험금 청구 과정에서 필요한 부분을 놓치지 않도록 필요한 서류, 절차, 확인사항을 꼼꼼하게 안내드립니다.</strong>
+          </p>
         </div>
+
+        <div class="section-head support-label reveal">
+          <span class="kicker">이런걸 도와드려요</span>
+        </div>
+
         <div class="support-grid">
           <article class="support-card reveal">
-            <b>청구 가능 보장 확인</b>
-            <p>사고나 질병 발생 시 놓치기 쉬운 청구 가능 보장을 함께 확인합니다.</p>
+            <b>청구 가능 보장 재확인</b>
+            <p>사고나 질병 발생 시 놓치기 쉬운 청구 가능 보장을 다시 확인합니다.</p>
           </article>
           <article class="support-card reveal">
-            <b>필수 서류 안내</b>
-            <p>진단서, 진료비 영수증, 세부내역서 등 상황별 필요 서류를 안내합니다.</p>
+            <b>필수 서류와 절차 안내</b>
+            <p>청구 단계별 필수 서류와 진행 절차를 상황에 맞게 안내합니다.</p>
           </article>
           <article class="support-card reveal">
-            <b>진행 절차 안내</b>
-            <p>보험금 청구 단계와 추가 확인 요청이 있을 때의 확인사항을 정리합니다.</p>
+            <b>추가 확인 요청 내용 안내</b>
+            <p>보험금 지급 과정에서 추가 확인이 필요한 경우 확인해야 할 내용을 정리합니다.</p>
           </article>
           <article class="support-card reveal">
-            <b>보상 담당자 소통 확인</b>
-            <p>보험사 보상 담당자와 소통이 필요한 경우 확인해야 할 내용을 안내합니다.</p>
+            <b>보상 담당자 소통 안내</b>
+            <p>보험사 보상 담당자와 소통이 필요한 경우 어떤 내용을 확인해야 하는지 안내합니다.</p>
           </article>
           <article class="support-card reveal">
-            <b>손해사정 진행 시 확인</b>
+            <b>손해사정 진행 시 확인사항</b>
             <p>손해사정이 진행될 때 고객님이 확인해야 할 사항을 안내합니다.</p>
           </article>
           <article class="support-card reveal">
-            <b>지급 지연·일부 지급 확인</b>
+            <b>지급 지연·일부 지급 기준 확인</b>
             <p>보험금 지급이 지연되거나 일부 지급되는 경우 약관 기준을 함께 확인합니다.</p>
           </article>
         </div>
@@ -1512,54 +1531,68 @@
     <section class="faq" id="faq" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="section-head reveal">
-          <span class="kicker">상담 전 많이 묻는 질문</span>
-          <h2 id="faq-title">문의 전 궁금한 점을<br>먼저 확인해보세요</h2>
+          <h2 class="section-title" id="faq-title">상담 전 많이<br>묻는 질문</h2>
         </div>
 
         <div class="faq-list reveal">
           <details open>
-            <summary>상담을 받으면 꼭 가입해야 하나요?</summary>
-            <div class="answer">아니요. 상담은 현재 보험 상태를 확인하고, 필요한 경우에만 대안을 안내드리는 과정입니다. 정리된 내용을 보고 진행 여부는 고객님이 결정하시면 됩니다.</div>
+            <summary>Q. 상담을 받으면 꼭 가입을 해야 하나요?</summary>
+            <div class="answer">
+              아니요, 상담은 가입을 전제로 하지 않습니다.<br><br>
+              상담은 현재 보험 상태를 확인하고, 필요한 경우 대안을 안내드리는 과정입니다.<br><br>
+              정리된 내용을 보고나서 진행 여부는 고객님이 결정하시면 됩니다.
+            </div>
           </details>
           <details>
-            <summary>상담만 받고 추가 진행을 하지 않아도 괜찮나요?</summary>
-            <div class="answer">네, 괜찮습니다. 내 보험의 현재 상태를 이해하는 것만으로도 충분히 의미가 있습니다. 진행하지 않기로 하셔도 원치 않는 가입 권유 연락을 하지 않습니다.</div>
+            <summary>Q. 상담만 받고 추가 진행을 하지 않아도 정말 괜찮은가요?</summary>
+            <div class="answer">
+              네, 괜찮습니다.<br><br>
+              내 보험의 현재 상태를 정확히 이해하는 것만으로도 충분히 의미가 있습니다.<br><br>
+              진행하지 않기로 하셔도 계속 가입 권유 연락을 드리지 않습니다.
+            </div>
           </details>
           <details>
-            <summary>제 개인정보가 보험사에 바로 제공되나요?</summary>
-            <div class="answer">그렇지 않습니다. 보험사 심사나 필수 절차가 필요한 경우 반드시 사전에 설명드리고 동의를 받은 후 진행합니다.</div>
+            <summary>Q. 제 개인정보가 보험사에 바로 제공되나요?</summary>
+            <div class="answer">절대 그렇지 않습니다. 보험사 심사나 필수 절차가 필요한 경우 반드시 사전에 고객님께 상세히 설명드리고 동의를 받은 후 안전하게 진행합니다.</div>
           </details>
           <details>
-            <summary>기존 보험은 무조건 해지해야 하나요?</summary>
-            <div class="answer">아니요. 오래전에 가입한 상품 중에는 유지하는 것이 더 유리한 보험도 있습니다. 유지해야 할 보험과 조정이 필요한 부분을 나누어 안내드립니다.</div>
+            <summary>Q. 기존 보험은 무조건 해지해야 하나요?</summary>
+            <div class="answer">
+              아니요, 오래전에 가입한 상품 중에는 유지하는 것이 더 유리한 보험도 있습니다.<br><br>
+              유지해야 할 보험과 조정이 필요한 부분을 명확히 나누어 안내해 드립니다.
+            </div>
           </details>
           <details>
-            <summary>과거 병력이 있어도 상담받을 수 있나요?</summary>
-            <div class="answer">네. 병력이 있다고 해서 무조건 상담이 어려운 것은 아닙니다. 치료 이력, 투약 여부, 고지사항 가능성에 따라 방향이 달라질 수 있어 먼저 확인이 필요합니다.</div>
+            <summary>Q. 과거 병력이 있어도 상담받을 수 있나요?</summary>
+            <div class="answer">
+              네, 병력이 있다고 해서 무조건 가입이 불가능한 것은 아닙니다.<br><br>
+              치료 이력이나 투약 여부에 따라 조건은 달라질 수 있으나 최적의 방향을 검토해 드립니다.
+            </div>
           </details>
           <details>
-            <summary>보험료를 줄이는 상담도 가능한가요?</summary>
-            <div class="answer">가능합니다. 다만 단순히 보장을 줄여 가격만 낮추는 방식이 아니라, 보장 균형과 유지 가능성을 함께 고려해 조정 방향을 안내드립니다.</div>
+            <summary>Q. 보험료를 줄이는 상담도 가능한가요?</summary>
+            <div class="answer">
+              당연히 가능합니다. 단순히 보장을 줄여 가격만 낮추는 것이 아닌,<br><br>
+              보장 균형을 고려한 합리적인 조정 대안을 안내드립니다.
+            </div>
           </details>
           <details>
-            <summary>보험증권이 없어도 문의할 수 있나요?</summary>
-            <div class="answer">네. 보험증권이 없어도 괜찮습니다. 현재 가입내역을 확인하는 방법부터 편하게 안내드립니다.</div>
+            <summary>Q. 가입 후에도 관리받을 수 있나요?</summary>
+            <div class="answer">네, 보험금 청구가 필요한 상황이 생기면 청구 가능한 보장, 필요 서류, 진행 과정을 도와드립니다.</div>
           </details>
         </div>
       </div>
     </section>
 
     <section class="final" aria-labelledby="final-title">
-      <div class="wrap">
-        <div class="final-card reveal">
-          <h2 id="final-title">내 보험,<br>지금 상태 그대로 괜찮을까요?</h2>
-          <p>보험은 무작정 새로 가입하는 것보다 제대로 확인하는 순서가 먼저입니다. 내 보험이 과한지, 부족한지, 적절한지 혼자 판단하기 어렵다면 보결남에게 먼저 확인해보세요.</p>
-          <div class="cta-row" style="justify-content:center">
-            <a class="btn btn-primary" href="https://pf.kakao.com/_YOUR_CHANNEL" target="_blank" rel="noopener">💬 카톡으로 1:1 문의하기</a>
-            <a class="btn btn-secondary" href="tel:010-0000-0000">📞 전화로 문의하기</a>
-          </div>
-          <p class="helper-text" style="color:rgba(255,255,255,.62)">상담은 가입을 강요하지 않으며, 현재 보험 상태를 확인하고 고객님의 상황에 맞는 방향을 함께 검토합니다.</p>
+      <div class="final-card reveal">
+        <h2 id="final-title">내 보험,<br>지금 상태 그대로 괜찮을까요?</h2>
+        <p>보험은 무작정 새로 가입하는 것보다 제대로 확인하는 순서가 먼저입니다. 내 보험이 과한지, 부족한지, 적절한지 혼자 판단하기 어렵다면 보결남에게 먼저 확인해보세요.</p>
+        <div class="cta-row" style="justify-content:center">
+          <a class="btn btn-primary" href="https://pf.kakao.com/_YOUR_CHANNEL" target="_blank" rel="noopener">💬 카톡으로 1:1 문의하기</a>
+          <a class="btn btn-secondary" href="tel:010-0000-0000">📞 전화로 문의하기</a>
         </div>
+        <p class="helper-text" style="color:rgba(255,255,255,.62)">상담은 가입을 강요하지 않으며, 현재 보험 상태를 확인하고 고객님의 상황에 맞는 방향을 함께 검토합니다.</p>
       </div>
     </section>
   </main>
