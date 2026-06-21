@@ -530,17 +530,42 @@
     }
 
     .compare-card {
-      padding: 34px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background: #fff;
-      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
     }
 
     .compare-table {
       display: grid;
       gap: 10px;
-      margin-top: 28px;
+      margin-top: 0;
+    }
+
+    .compare-head {
+      max-width: 460px;
+      padding: 28px 0;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .compare-head .section-title {
+      margin-bottom: 22px;
+      font-size: clamp(36px, 4.4vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.075em;
+    }
+
+    .compare-head .lead {
+      color: #344054;
+      font-size: clamp(16px, 1.7vw, 19px);
+      line-height: 1.78;
+      font-weight: 700;
+    }
+
+    .compare-body {
+      display: grid;
+      gap: 18px;
     }
 
     .compare-row {
@@ -575,7 +600,7 @@
     }
 
     .compare-note {
-      margin-top: 22px;
+      margin-top: 0;
       padding: 20px;
       border-radius: 22px;
       background: var(--orange-soft);
@@ -1045,7 +1070,13 @@
         line-height: 1.55;
       }
       .message-box p { font-size: 18px; }
-      .compare-card { padding: 22px; }
+      .compare-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .compare-head {
+        padding: 0;
+      }
       .compare-table {
         gap: 16px;
       }
@@ -1274,42 +1305,46 @@
     <section aria-labelledby="compare-title">
       <div class="wrap">
         <div class="compare-card reveal">
-          <div class="section-head left">
-            <span class="kicker">자동 보험점수만으로는 부족할 수 있습니다</span>
-            <h2 id="compare-title">숫자 하나보다 중요한 건<br>내 상황을 함께 보는 과정입니다</h2>
-            <p class="lead">자동 분석은 편리하지만, 과거 치료 이력·고지사항·가족력·검진 계획·예산까지 모두 충분히 반영하기는 어렵습니다.</p>
+          <div class="compare-head">
+            <h2 class="section-title" id="compare-title">숫자 하나보다 중요한 건<br>내 상황을 함께 보는 과정입니다</h2>
+            <p class="lead">
+              자동 보험점수만으로는 부족할 수 있습니다.<br><br>
+              자동 분석은 편리하지만, 과거 치료 이력·고지사항·가족력·검진 계획·예산까지 모두 충분히 반영하기는 어렵습니다.
+            </p>
           </div>
 
-          <div class="compare-table" role="table" aria-label="자동 분석과 보결남 점검 비교">
-            <div class="compare-row header" role="row">
-              <div class="compare-cell" role="columnheader">비교 항목</div>
-              <div class="compare-cell" role="columnheader">자동 분석</div>
-              <div class="compare-cell" role="columnheader">보결남 점검</div>
+          <div class="compare-body">
+            <div class="compare-table" role="table" aria-label="자동 분석과 보결남 점검 비교">
+              <div class="compare-row header" role="row">
+                <div class="compare-cell" role="columnheader">비교 항목</div>
+                <div class="compare-cell" role="columnheader">자동 분석</div>
+                <div class="compare-cell" role="columnheader">보결남 점검</div>
+              </div>
+              <div class="compare-row" role="row">
+                <div class="compare-cell" role="cell">분석 방식</div>
+                <div class="compare-cell" role="cell">정량 점수와 통계 기반 확인</div>
+                <div class="compare-cell good" role="cell">대화를 통한 1:1 상황 확인</div>
+              </div>
+              <div class="compare-row" role="row">
+                <div class="compare-cell" role="cell">개인 상황</div>
+                <div class="compare-cell" role="cell">세부 치료 이력 반영에 한계가 있을 수 있음</div>
+                <div class="compare-cell good" role="cell">치료 이력과 고지 가능성을 먼저 확인</div>
+              </div>
+              <div class="compare-row" role="row">
+                <div class="compare-cell" role="cell">생활 계획</div>
+                <div class="compare-cell" role="cell">가족력·검진 계획·예산 반영이 제한적일 수 있음</div>
+                <div class="compare-cell good" role="cell">가족력, 예산, 앞으로의 계획까지 함께 검토</div>
+              </div>
+              <div class="compare-row" role="row">
+                <div class="compare-cell" role="cell">상담 목적</div>
+                <div class="compare-cell" role="cell">점수에 따른 보장 부족 여부 확인</div>
+                <div class="compare-cell good" role="cell">유지할 보험과 필요한 대안을 구분</div>
+              </div>
             </div>
-            <div class="compare-row" role="row">
-              <div class="compare-cell" role="cell">분석 방식</div>
-              <div class="compare-cell" role="cell">정량 점수와 통계 기반 확인</div>
-              <div class="compare-cell good" role="cell">대화를 통한 1:1 상황 확인</div>
-            </div>
-            <div class="compare-row" role="row">
-              <div class="compare-cell" role="cell">개인 상황</div>
-              <div class="compare-cell" role="cell">세부 치료 이력 반영에 한계가 있을 수 있음</div>
-              <div class="compare-cell good" role="cell">치료 이력과 고지 가능성을 먼저 확인</div>
-            </div>
-            <div class="compare-row" role="row">
-              <div class="compare-cell" role="cell">생활 계획</div>
-              <div class="compare-cell" role="cell">가족력·검진 계획·예산 반영이 제한적일 수 있음</div>
-              <div class="compare-cell good" role="cell">가족력, 예산, 앞으로의 계획까지 함께 검토</div>
-            </div>
-            <div class="compare-row" role="row">
-              <div class="compare-cell" role="cell">상담 목적</div>
-              <div class="compare-cell" role="cell">점수에 따른 보장 부족 여부 확인</div>
-              <div class="compare-cell good" role="cell">유지할 보험과 필요한 대안을 구분</div>
-            </div>
-          </div>
 
-          <div class="compare-note">
-            점수가 낮다는 이유만으로 기존 보험을 성급하게 조정하면, 건강 상태나 고지의무 때문에 새로운 대안 가입이 어려워져 보장 공백이 생길 수 있습니다. 보험은 점수보다 순서가 중요합니다.
+            <div class="compare-note">
+              점수가 낮다는 이유만으로 기존 보험을 성급하게 조정하면, 건강 상태나 고지의무 때문에 새로운 대안 가입이 어려워져 보장 공백이 생길 수 있습니다. 보험은 점수보다 순서가 중요합니다.
+            </div>
           </div>
         </div>
       </div>
