@@ -95,12 +95,37 @@
     .accent { color: var(--primary); }
 
     .hero-intro {
-      max-width: 680px;
-      margin: 0 auto 32px;
-      color: #344054;
-      font-size: clamp(18px, 2.3vw, 24px);
-      line-height: 1.58;
+      max-width: 620px;
+      margin: 0 auto 34px;
+      color: #334155;
+      text-align: center;
       letter-spacing: -0.04em;
+    }
+
+    .hero-intro::before {
+      content: "";
+      display: block;
+      width: 34px;
+      height: 3px;
+      margin: 0 auto 14px;
+      border-radius: 99px;
+      background: var(--primary);
+    }
+
+    .hero-intro .intro-lead {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--primary);
+      font-size: clamp(19px, 2.2vw, 24px);
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .hero-intro .intro-body {
+      display: block;
+      color: #344054;
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.75;
       font-weight: 650;
     }
 
@@ -957,16 +982,29 @@
     @media (max-width: 760px) {
       .wrap { width: min(100% - 30px, var(--max)); }
       .hero { padding: 54px 0 42px; }
-      h1 { margin-bottom: 18px; }
+      h1 { 
+        margin-bottom: 40px; 
+      }
       .hero-intro {
-        margin-bottom: 24px;
+        margin-bottom: 30px;
+      }
+      .hero-intro::before {
+        width: 28px;
+        margin-bottom: 40px;
+      }
+      .hero-intro .intro-lead {
+        margin-bottom: 14px;
         font-size: 18px;
+      }
+      .hero-intro .intro-body {
+        font-size: 15px;
+        line-height: 1.72;
       }
       .hero-chat {
         gap: 20px;
         width: 100%;
         padding: 0 25px;
-        margin-bottom: 24px;
+        margin-bottom: 30px;
       }
       .chat-bubble {
         width: 100%;
@@ -1060,11 +1098,13 @@
         <div class="reveal">
           <h1>보험료는 매달 나가는데,<br><span class="accent">내 보험은 괜찮은지</span><br>불안하시죠?</h1>
           <p class="hero-intro">
-            그 불안은 당연합니다.<br><br>
-            보험은 가입할 때는 좋아 보이지만,<br>
-            시간이 지나면 내가 어떤 보장을 갖고 있는지,<br>
-            무엇이 중복이고 무엇이 부족한지<br>
-            <strong>혼자 판단하기 어려워지기 때문입니다.</strong>
+            <span class="intro-lead">그 불안은 당연합니다.</span>
+            <span class="intro-body">
+              보험은 가입할 때는 좋아 보이지만,<br>
+              시간이 지나면 내가 어떤 보장을 갖고 있는지,<br>
+              무엇이 중복이고, 무엇이 부족한지<br>
+              <strong>혼자 판단하기 어려워지기 때문입니다.</strong>
+            </span>
           </p>
           <div class="hero-chat" aria-label="고객 고민 예시">
             <div class="chat-bubble">
