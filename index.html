@@ -458,26 +458,26 @@
     .sticky-note {
       position: sticky;
       top: 100px;
-      padding: 30px;
-      border-radius: var(--radius-xl);
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+      max-width: 460px;
+      padding: 28px 0;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .sticky-note h3 {
-      margin-bottom: 14px;
-      font-size: 28px;
-      line-height: 1.25;
-      letter-spacing: -0.055em;
+    .sticky-note .section-title {
+      margin-bottom: 22px;
+      font-size: clamp(36px, 4.4vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.075em;
     }
 
     .sticky-note p {
       margin: 0;
-      color: #475467;
-      line-height: 1.72;
+      color: #344054;
+      font-size: clamp(16px, 1.7vw, 19px);
+      line-height: 1.78;
       letter-spacing: -0.035em;
-      font-weight: 650;
+      font-weight: 700;
     }
 
     .result-list {
@@ -970,22 +970,6 @@
       }
     }
 
-    @media (max-width: 1024px) {
-      .diagnosis-grid {
-        grid-template-columns: 1fr;
-      }
-      .pain-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .promise-strip,
-      .principle-grid,
-      .support-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .sticky-note { position: static; }
-      .process-card { grid-template-columns: 200px 1fr; }
-    }
-
     @media (max-width: 760px) {
       .wrap { width: min(100% - 30px, var(--max)); }
       .hero { padding: 60px 0 0; }
@@ -1004,7 +988,6 @@
         font-size: 22px;
       }
       .hero-intro .intro-body {
-        font-size: 15px;
         line-height: 1.72;
       }
       .hero-chat {
@@ -1035,6 +1018,9 @@
       .cta-row .btn { width: 100%; }
       section { padding: 100px 0; }
       .section-head { margin-bottom: 26px; }
+      .diagnosis-grid {
+        grid-template-columns: 1fr;
+      }
       .promise-strip,
       .principle-grid,
       .support-grid {
@@ -1100,15 +1086,11 @@
       }
       .process-label h3 { font-size: 25px; }
       .inside-box { padding: 16px; }
+      .sticky-note { position: static; }
       .footer-grid { grid-template-columns: 1fr; }
       .final { padding-bottom: 30px; }
       .final-card { border-radius: 32px; text-align: left; }
       .final-card p { margin-left: 0; }
-    }
-
-    @media (max-width: 380px) {
-      .btn { padding: 0 18px; font-size: 15px; }
-      .process-card { padding: 20px; }
     }
   </style>
 </head>
@@ -1135,11 +1117,11 @@
               <p>“완납까지 얼만큼의 보험료를<br class="mobile-break">내야 하는지 알고 계신가요?”</p>
             </div>
             <div class="chat-bubble">
-              <p>“어떤 상황에 얼마를 받을 수 있는지<br class="mobile-break">알고 계신가요?”</p>
+              <p>“어떤 상황에 보장이 되고,<br class="mobile-break">얼마를 받을 수 있는지 알고 계신가요?”</p>
             </div>
           </div>
           <p class="hero-punch">
-            <strong>하나라도 해당된다면<br><span class="hero-highlight">현재 보험 상태</span>부터<br>먼저 확인해보세요!</strong>
+            <strong>이 중 하나라도 모르는 게 있다면<br><span class="hero-highlight">현재 보험 상태</span>부터<br>먼저 확인해보세요!</strong>
           </p>
           <div class="cta-row" aria-label="상담 문의 버튼">
             <a class="btn btn-primary" href="https://pf.kakao.com/_YOUR_CHANNEL" target="_blank" rel="noopener">💬 카톡으로 내 보험 상태 확인하기</a>
